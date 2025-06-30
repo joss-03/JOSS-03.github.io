@@ -1,0 +1,196 @@
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f9ff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #50c9c3;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navegación */
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  background: #82ccdd;
+  padding: 1rem;
+  margin: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #333;
+}
+
+/* Catálogo Productos */
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.producto {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.producto img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+/* Galería */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.galeria img {
+  width: 150px;          /* ancho fijo */
+  height: 100px;         /* alto fijo */
+  object-fit: cover;     /* rellena sin deformar, recortando si es necesario */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.galeria img:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #50c9c3;
+  color: white;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Botones */
+button.eliminar {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.eliminar:hover {
+  background-color: #ee5253;
+}
+
+button.vaciar {
+  background-color: #576574;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.vaciar:hover {
+  background-color: #2f3640;
+}
+
+/* Sección Inicio con animación */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#inicio {
+  background: linear-gradient(135deg, #50c9c3, #82ccdd);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  animation: fadeInUp 1s ease forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+#inicio::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.3), transparent 70%);
+  animation: pulseGlow 3s infinite;
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+#inicio h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#inicio p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
